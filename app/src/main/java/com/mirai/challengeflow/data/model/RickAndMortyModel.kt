@@ -1,4 +1,4 @@
-package com.mirai.challengeflow.data.remote
+package com.mirai.challengeflow.data.model
 
 import java.util.*
 
@@ -49,9 +49,14 @@ data class RickAndMortyModel(
             val type: String = "",
             val gender: String = "",
             val origin: Objects,
-            val location: Objects,
+            val location: LocationData,
             val image: String = "",
-            val episode: List<String>,
+            val episode: List<String> = listOf(),
             val url: String = "",
             val created: String
             )
+
+
+data class LocationData(val name: String= "" ,val url: String = "")
+
+data class RickAndMortyList(val results: List<RickAndMortyModel> = listOf())
