@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mirai.challengeflow.R
 import com.mirai.challengeflow.core.Resource
 import com.mirai.challengeflow.data.remote.RickAndMortyDataSource
+import com.mirai.challengeflow.databinding.ActivityMainBinding
 import com.mirai.challengeflow.databinding.FragmentItemListBinding
 import com.mirai.challengeflow.databinding.ItemListContentBinding
 import com.mirai.challengeflow.presentation.DataViewModel
@@ -51,6 +52,7 @@ class itemListFragment : Fragment(R.layout.fragment_item_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         binding = FragmentItemListBinding.bind(view)
 

@@ -9,13 +9,19 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.mirai.challengeflow.R
 import com.mirai.challengeflow.databinding.ActivityItemDetailBinding
+import com.mirai.challengeflow.databinding.ActivityMainBinding
+import com.mirai.challengeflow.databinding.ItemListDataBinding
 
 class itemDetailHostActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var ItemListdataBinding: ItemListDataBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val ItemListdataBinding = ItemListDataBinding.inflate(layoutInflater)
+        setContentView(ItemListdataBinding.root)
 
         val binding = ActivityItemDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
