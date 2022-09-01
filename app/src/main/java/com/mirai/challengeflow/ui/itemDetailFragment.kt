@@ -21,9 +21,14 @@ import com.mirai.challengeflow.ui.placeholder.PlaceholderContent
  */
 class itemDetailFragment : Fragment() {
 
+
+
+
+
     /**
      * The placeholder content this fragment is presenting.
      */
+    /*
     private var item: PlaceholderContent.PlaceholderItem? = null
 
     lateinit var itemDetailTextView: TextView
@@ -67,7 +72,7 @@ class itemDetailFragment : Fragment() {
         val rootView = binding.root
 
         toolbarLayout = binding.toolbarLayout
-        itemDetailTextView = binding.itemDetail
+        itemDetailTextView = binding.itemDetail!!
 
         updateContent()
         rootView.setOnDragListener(dragListener)
@@ -96,4 +101,6 @@ class itemDetailFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+     */
 }

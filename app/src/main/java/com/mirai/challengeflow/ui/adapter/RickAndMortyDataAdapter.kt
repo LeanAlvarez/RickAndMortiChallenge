@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+
 //import com.bumptech.glide.Glide
 import com.mirai.challengeflow.core.BaseViewHolder
 import com.mirai.challengeflow.data.model.RickAndMortyModel
@@ -15,7 +16,6 @@ class RickAndMortyDataAdapter (val results: List<RickAndMortyModel>, private val
 
     interface OnItemClickListener {
         fun onItemClick(data: RickAndMortyModel)
-
 
     }
 
