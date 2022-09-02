@@ -3,9 +3,11 @@ package com.mirai.challengeflow.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ConcatAdapter
 import com.mirai.challengeflow.R
 import com.mirai.challengeflow.core.Resource
@@ -69,6 +71,11 @@ class MainFragment : Fragment(R.layout.fragment_main), RickAndMortyDataAdapter.O
 
     override fun onItemClick(data: RickAndMortyModel) {
        Log.d("Aprete este Personaje: ", "$data")
+        val bundle = bundleOf("id" to data.id, "name" to data.name, "status" to data.status, "species" to data.species,
+            "type" to data.type, "gender" to data.gender, "origin" to data.origin.name,
+            "location" to data.location.name, "image" to data.image, "created" to data.created)
+
+        findNavController().navigate(R.id.action_mainFragment_to_detailFragment, bundle)
     }
 
 }

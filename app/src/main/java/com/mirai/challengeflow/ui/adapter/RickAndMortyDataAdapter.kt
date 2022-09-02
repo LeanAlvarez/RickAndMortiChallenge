@@ -49,6 +49,7 @@ class RickAndMortyDataAdapter (private val results: List<RickAndMortyModel>, pri
             Glide.with(context).load("${item.image}").centerCrop().into(binding.ivRM)
             if(item.status == "Alive"){
                 //binding.statusLive.setTextColor(R.color.statusAlive)
+
             }else if(item.status == "Dead"){
                 //binding.statusLive.setTextColor(R.color.statusDead)
             }else{
