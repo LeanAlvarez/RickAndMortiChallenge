@@ -21,7 +21,7 @@ class DataViewModel(private val repo: DataRepository): ViewModel() {
 
 }
 
-class dataViewModelFactory(val repo: DataRepository): ViewModelProvider.Factory{
+class DataViewModelFactory(val repo: DataRepository): ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return modelClass.getConstructor(DataRepository::class.java).newInstance(repo)
     }
