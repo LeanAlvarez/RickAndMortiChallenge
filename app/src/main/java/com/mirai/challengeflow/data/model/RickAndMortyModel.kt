@@ -48,7 +48,7 @@ data class RickAndMortyModel(
             val species: String = "",
             val type: String = "",
             val gender: String = "",
-            val origin: Objects,
+            val origin: OriginData,
             val location: LocationData,
             val image: String = "",
             val episode: List<String> = listOf(),
@@ -58,5 +58,7 @@ data class RickAndMortyModel(
 
 
 data class LocationData(val name: String= "" ,val url: String = "")
+
+data class OriginData(val name: String = "", val url: String = "")
 
 data class RickAndMortyList(val results: List<RickAndMortyModel> = listOf())

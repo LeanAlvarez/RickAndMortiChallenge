@@ -40,16 +40,25 @@ class MainFragment : Fragment(R.layout.fragment_main), RickAndMortyDataAdapter.O
         viewModel.fetchRickAndMortyData(1).observe(viewLifecycleOwner, Observer { result ->
 
             when(result){
-                is Resource.Loading -> {}
+                is Resource.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
 
                 is Resource.Success -> {
                     Log.d("Data ->", "${result.data.results}")
+                    binding.progressBar.visibility = View.GONE
                     concatAdapter.apply {
                     addAdapter(RickAndMortyDataAdapter( result.data.results, this@MainFragment))
                     }
+                    binding.rvCharacters.adapter = concatAdapter
                 }
 
-                is Resource.Failure -> {}
+
+                is Resource.Failure -> {
+                    binding.progressBar.visibility = View.GONE
+                }
+
+
 
             }
         })
@@ -59,7 +68,7 @@ class MainFragment : Fragment(R.layout.fragment_main), RickAndMortyDataAdapter.O
     }
 
     override fun onItemClick(data: RickAndMortyModel) {
-        TODO("Not yet implemented")
+       Log.d("Aprete este Personaje: ", "$data")
     }
 
 }
